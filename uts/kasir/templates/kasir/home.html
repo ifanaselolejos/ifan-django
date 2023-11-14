@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Resto | IFAN</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Gaya tambahan jika diperlukan */
+        .product-card {
+            border: 1px solid #eee;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .product-card:hover {
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-center my-5">Selamat Datang di Kasir IFAN Resto</h1>
+
+        <div class="row">
+            <div class="col-md-4">
+                <div class="product-card">
+                    <h2>Lalapan</h2>
+                    <p>Harga: Rp 25000</p>
+                    <input type="number" id="quantity1" value="0" min="0">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <h2>Pecel</h2>
+                    <p>Harga: Rp 20000</p>
+                    <input type="number" id="quantity2" value="0" min="0">
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="product-card">
+                    <h2>Es Jeruk</h2>
+                    <p>Harga: Rp 5000</p>
+                    <input type="number" id="quantity3" value="0" min="0">
+                </div>
+            </div>
+
+            <!-- Tambahkan lebih banyak produk di sini -->
+        </div>
+
+        <div class="text-center my-5">
+            <button class="btn btn-primary" onclick="calculateTotal()">Hitung Total</button>
+        </div>
+
+        <div class="text-center">
+            <h2>Total Pembelian: Rp <span id="totalAmount">0</span></h2>
+        </div>
+    </div>
+
+    <script>
+        function calculateTotal() {
+            const quantity1 = parseInt(document.getElementById('quantity1').value);
+            const quantity2 = parseInt(document.getElementById('quantity2').value);
+            const quantity3 = parseInt(document.getElementById('quantity3').value);
+            const price1 = 25000;
+            const price2 = 20000;
+            const price3 = 5000;
+
+            const totalAmount = (quantity1 * price1) + (quantity2 * price2)+ (quantity3 * price3);
+            document.getElementById('totalAmount').innerText = totalAmount;
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
